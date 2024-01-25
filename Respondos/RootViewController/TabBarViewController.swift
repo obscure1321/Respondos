@@ -32,12 +32,17 @@ final class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC(viewModels: viewModels)
+        drawBezier()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewControllers = vcArray
         self.selectedIndex = 1
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
 }
 
@@ -52,6 +57,31 @@ private extension TabBarViewController {
             
             return vc
         }
+    }
+    
+    private func drawBezier() {
+        let roundLayer = CAShapeLayer()
+        
+        let xPos: CGFloat = 10
+        let yPos: CGFloat = 0
+        let width = tabBar.frame.width - xPos * 2
+        let height = tabBar.frame.height + 120
+        
+        let bezierPath = UIBezierPath(roundedRect: CGRect(
+            x: xPos,
+            y: yPos,
+            width: width,
+            height: height),
+            cornerRadius: 40)
+        
+        roundLayer.path = bezierPath.cgPath
+        
+        tabBar.layer.insertSublayer(roundLayer, at: 0)
+        tabBar.itemPositioning = .centered
+       
+        tabBar.frame.size.height += 80
+        tabBar.frame.origin.y = -80
+        roundLayer.fillColor = UIColor.white.cgColor
     }
 }
 
