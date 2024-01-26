@@ -29,7 +29,6 @@ final class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC(viewModels: viewModels)
-        changeRadiusOfTabbar()
         changeColor()
         addShadow()
 //        drawBezier()
@@ -43,6 +42,8 @@ final class TabBarViewController: UITabBarController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        changeRadiusOfTabbar()
+        changeHeightOfTabbar()
     }
 }
 
@@ -61,8 +62,14 @@ private extension TabBarViewController {
     private  func changeRadiusOfTabbar(){
         self.tabBar.layer.masksToBounds = false
         self.tabBar.isTranslucent = true
-        self.tabBar.layer.cornerRadius = 50
-        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        // checking device and setting corner raidus only for buttonless iPhones
+        if UIDevice().userInterfaceIdiom == .phone {
+             if let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+                keyWindow.safeAreaInsets.bottom > 0 {
+                 self.tabBar.layer.cornerRadius = 50
+                 self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+             }
+         }
     }
     
     private func changeColor(){
@@ -72,10 +79,22 @@ private extension TabBarViewController {
     }
     
     private func addShadow() {
-        tabBar.layer.shadowColor = UIColor.white.cgColor
+        tabBar.layer.shadowColor = UIColor.black.cgColor
         tabBar.layer.shadowOpacity = 1
-        tabBar.layer.shadowOffset = CGSize(width: 0, height: -8)
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
         tabBar.layer.shadowRadius = 8
+    }
+    
+    private func changeHeightOfTabbar(){
+        if UIDevice().userInterfaceIdiom == .phone {
+            if let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+               keyWindow.safeAreaInsets.bottom > 0 {
+                var tabFrame = tabBar.frame
+                tabFrame.size.height = 100
+                tabFrame.origin.y = view.frame.size.height - 100
+                tabBar.frame = tabFrame
+            }
+        }
     }
 }
 
