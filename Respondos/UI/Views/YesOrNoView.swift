@@ -10,7 +10,7 @@ import UIKit
 final class YesOrNoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .lightGray
+        self.backgroundColor = .systemBackground
     }
     required init?(coder: NSCoder) {
         fatalError("unsupported")
