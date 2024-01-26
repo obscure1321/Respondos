@@ -13,26 +13,26 @@ final class TabBarViewController: UITabBarController {
         ViewModel(
             vc: YesOrNoViewController(),
             title: nil,
-            image: UIImage(systemName: "eyes.inverse")!,
-            selectedImage: UIImage(systemName: "eyes")!
+            image: UIImage(systemName: "eyes")!
         ),
         ViewModel(
-            vc: ProsNConsViewController(),
+            vc: HeadsOrTailsViewController(),
             title: nil,
-            image: UIImage(systemName: "bitcoinsign.circle")!,
-            selectedImage: UIImage(systemName: "bitcoinsign.circle.fill")!
+            image: UIImage(systemName: "bitcoinsign.circle.fill")!
         ),
         ViewModel(
             vc: RandomizerViewController(),
             title: nil,
-            image: UIImage(systemName: "cube.transparent")!,
-            selectedImage: UIImage(systemName: "cube.transparent.fill")!
+            image: UIImage(systemName: "cube.transparent.fill")!
         )]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC(viewModels: viewModels)
-        drawBezier()
+        changeRadiusOfTabbar()
+        changeColor()
+        addShadow()
+//        drawBezier()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,38 +53,29 @@ private extension TabBarViewController {
             
             vc.tabBarItem.title = viewModel.title
             vc.tabBarItem.image = viewModel.image
-            vc.tabBarItem.selectedImage = viewModel.selectedImage
             
             return vc
         }
     }
     
-    private func drawBezier() {
-        let roundLayer = CAShapeLayer()
-        
-        let xPos: CGFloat = 24
-        let yPos: CGFloat = -8
-        let width = tabBar.frame.width - xPos * 2
-        let height = tabBar.frame.height + 5
-        
-        let bezierPath = UIBezierPath(roundedRect: CGRect(
-            x: xPos,
-            y: yPos,
-            width: width,
-            height: height),
-            cornerRadius: 24)
-        
-        roundLayer.path = bezierPath.cgPath
-        
-        tabBar.layer.insertSublayer(roundLayer, at: 0)
-        tabBar.itemPositioning = .centered
-        tabBar.itemWidth = 80
-        
-        roundLayer.fillColor = UIColor.darkGray.cgColor
-        roundLayer.shadowColor = UIColor.green.cgColor
-        roundLayer.shadowOpacity = 1
-        roundLayer.shadowOffset = CGSize(width: 0, height: 0)
-        roundLayer.shadowRadius = 8
+    private  func changeRadiusOfTabbar(){
+        self.tabBar.layer.masksToBounds = false
+        self.tabBar.isTranslucent = true
+        self.tabBar.layer.cornerRadius = 50
+        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
+    
+    private func changeColor(){
+        tabBar.backgroundColor = #colorLiteral(red: 0.005332739092, green: 0.1982556581, blue: 0.1359425783, alpha: 1)
+        self.tabBar.unselectedItemTintColor = .gray
+        self.tabBar.tintColor = .white
+    }
+    
+    private func addShadow() {
+        tabBar.layer.shadowColor = UIColor.white.cgColor
+        tabBar.layer.shadowOpacity = 1
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: -8)
+        tabBar.layer.shadowRadius = 8
     }
 }
 
@@ -93,6 +84,5 @@ extension TabBarViewController {
         var vc: UIViewController
         var title: String?
         var image: UIImage
-        var selectedImage: UIImage
     }
 }
