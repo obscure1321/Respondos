@@ -12,19 +12,19 @@ final class TabBarViewController: UITabBarController {
     var viewModels = [
         ViewModel(
             vc: YesOrNoViewController(),
-            title: "Yes/No",
+            title: nil,
             image: UIImage(systemName: "eyes.inverse")!,
             selectedImage: UIImage(systemName: "eyes")!
         ),
         ViewModel(
             vc: ProsNConsViewController(),
-            title: "Pros&Cons",
+            title: nil,
             image: UIImage(systemName: "bitcoinsign.circle")!,
             selectedImage: UIImage(systemName: "bitcoinsign.circle.fill")!
         ),
         ViewModel(
             vc: RandomizerViewController(),
-            title: "Randomizer",
+            title: nil,
             image: UIImage(systemName: "cube.transparent")!,
             selectedImage: UIImage(systemName: "cube.transparent.fill")!
         )]
@@ -62,25 +62,24 @@ private extension TabBarViewController {
     private func drawBezier() {
         let roundLayer = CAShapeLayer()
         
-        let xPos: CGFloat = 10
-        let yPos: CGFloat = 0
+        let xPos: CGFloat = -4
+        let yPos: CGFloat = -8
         let width = tabBar.frame.width - xPos * 2
-        let height = tabBar.frame.height + 120
+        let height = tabBar.frame.height + 200
         
         let bezierPath = UIBezierPath(roundedRect: CGRect(
             x: xPos,
             y: yPos,
             width: width,
             height: height),
-            cornerRadius: 40)
+            cornerRadius: 80)
         
         roundLayer.path = bezierPath.cgPath
         
         tabBar.layer.insertSublayer(roundLayer, at: 0)
         tabBar.itemPositioning = .centered
-       
-        tabBar.frame.size.height += 80
-        tabBar.frame.origin.y = -80
+        tabBar.itemWidth = 80
+        
         roundLayer.fillColor = UIColor.white.cgColor
     }
 }
@@ -88,7 +87,7 @@ private extension TabBarViewController {
 extension TabBarViewController {
     struct ViewModel {
         var vc: UIViewController
-        var title: String
+        var title: String?
         var image: UIImage
         var selectedImage: UIImage
     }
