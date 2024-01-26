@@ -62,17 +62,17 @@ private extension TabBarViewController {
     private func drawBezier() {
         let roundLayer = CAShapeLayer()
         
-        let xPos: CGFloat = -4
+        let xPos: CGFloat = 24
         let yPos: CGFloat = -8
         let width = tabBar.frame.width - xPos * 2
-        let height = tabBar.frame.height + 200
+        let height = tabBar.frame.height + 5
         
         let bezierPath = UIBezierPath(roundedRect: CGRect(
             x: xPos,
             y: yPos,
             width: width,
             height: height),
-            cornerRadius: 80)
+            cornerRadius: 24)
         
         roundLayer.path = bezierPath.cgPath
         
@@ -80,7 +80,11 @@ private extension TabBarViewController {
         tabBar.itemPositioning = .centered
         tabBar.itemWidth = 80
         
-        roundLayer.fillColor = UIColor.white.cgColor
+        roundLayer.fillColor = UIColor.darkGray.cgColor
+        roundLayer.shadowColor = UIColor.green.cgColor
+        roundLayer.shadowOpacity = 1
+        roundLayer.shadowOffset = CGSize(width: 0, height: 0)
+        roundLayer.shadowRadius = 8
     }
 }
 
