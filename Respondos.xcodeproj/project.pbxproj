@@ -12,11 +12,11 @@
 		6DA895302B60F6F000C43F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA8952F2B60F6F000C43F82 /* Assets.xcassets */; };
 		6DA895332B60F6F000C43F82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA895312B60F6F000C43F82 /* LaunchScreen.storyboard */; };
 		6DA895402B60F9AB00C43F82 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA8953F2B60F9AB00C43F82 /* TabBarViewController.swift */; };
-		6DA895422B6102F600C43F82 /* ProsNConsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895412B6102F600C43F82 /* ProsNConsViewController.swift */; };
+		6DA895422B6102F600C43F82 /* HeadsOrTailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895412B6102F600C43F82 /* HeadsOrTailsViewController.swift */; };
 		6DA895442B61030800C43F82 /* YesOrNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895432B61030800C43F82 /* YesOrNoViewController.swift */; };
 		6DA895462B61031D00C43F82 /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895452B61031D00C43F82 /* RandomizerViewController.swift */; };
 		6DA895482B610FC800C43F82 /* YesOrNoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895472B610FC800C43F82 /* YesOrNoView.swift */; };
-		6DA8954A2B610FD600C43F82 /* ProsNConsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895492B610FD600C43F82 /* ProsNConsView.swift */; };
+		6DA8954A2B610FD600C43F82 /* HeadsOrTailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895492B610FD600C43F82 /* HeadsOrTailsView.swift */; };
 		6DA8954C2B610FE400C43F82 /* RandomizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA8954B2B610FE400C43F82 /* RandomizerView.swift */; };
 		8B9A83A86C9313C16E92F648 /* Pods_Respondos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA27B0BF14D462401669CD98 /* Pods_Respondos.framework */; };
 /* End PBXBuildFile section */
@@ -30,11 +30,11 @@
 		6DA895322B60F6F000C43F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DA895342B60F6F000C43F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DA8953F2B60F9AB00C43F82 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		6DA895412B6102F600C43F82 /* ProsNConsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProsNConsViewController.swift; sourceTree = "<group>"; };
+		6DA895412B6102F600C43F82 /* HeadsOrTailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsOrTailsViewController.swift; sourceTree = "<group>"; };
 		6DA895432B61030800C43F82 /* YesOrNoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesOrNoViewController.swift; sourceTree = "<group>"; };
 		6DA895452B61031D00C43F82 /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		6DA895472B610FC800C43F82 /* YesOrNoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesOrNoView.swift; sourceTree = "<group>"; };
-		6DA895492B610FD600C43F82 /* ProsNConsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProsNConsView.swift; sourceTree = "<group>"; };
+		6DA895492B610FD600C43F82 /* HeadsOrTailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsOrTailsView.swift; sourceTree = "<group>"; };
 		6DA8954B2B610FE400C43F82 /* RandomizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerView.swift; sourceTree = "<group>"; };
 		D0066DBC13EF36E931748C96 /* Pods-Respondos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respondos.debug.xcconfig"; path = "Target Support Files/Pods-Respondos/Pods-Respondos.debug.xcconfig"; sourceTree = "<group>"; };
 		DA27B0BF14D462401669CD98 /* Pods_Respondos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Respondos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				6DA895432B61030800C43F82 /* YesOrNoViewController.swift */,
-				6DA895412B6102F600C43F82 /* ProsNConsViewController.swift */,
+				6DA895412B6102F600C43F82 /* HeadsOrTailsViewController.swift */,
 				6DA895452B61031D00C43F82 /* RandomizerViewController.swift */,
 			);
 			path = ViewControllers;
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				6DA895472B610FC800C43F82 /* YesOrNoView.swift */,
-				6DA895492B610FD600C43F82 /* ProsNConsView.swift */,
+				6DA895492B610FD600C43F82 /* HeadsOrTailsView.swift */,
 				6DA8954B2B610FE400C43F82 /* RandomizerView.swift */,
 			);
 			path = Views;
@@ -261,13 +261,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA8954C2B610FE400C43F82 /* RandomizerView.swift in Sources */,
-				6DA895422B6102F600C43F82 /* ProsNConsViewController.swift in Sources */,
+				6DA895422B6102F600C43F82 /* HeadsOrTailsViewController.swift in Sources */,
 				6DA895402B60F9AB00C43F82 /* TabBarViewController.swift in Sources */,
 				6DA895442B61030800C43F82 /* YesOrNoViewController.swift in Sources */,
 				6DA895482B610FC800C43F82 /* YesOrNoView.swift in Sources */,
 				6DA895462B61031D00C43F82 /* RandomizerViewController.swift in Sources */,
 				6DA895272B60F6EF00C43F82 /* AppDelegate.swift in Sources */,
-				6DA8954A2B610FD600C43F82 /* ProsNConsView.swift in Sources */,
+				6DA8954A2B610FD600C43F82 /* HeadsOrTailsView.swift in Sources */,
 				6DA895292B60F6EF00C43F82 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
