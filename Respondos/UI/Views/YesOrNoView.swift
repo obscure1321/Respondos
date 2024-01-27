@@ -6,13 +6,27 @@
 //
 
 import UIKit
+import SnapKit
 
 final class YesOrNoView: UIView {
+    private var yesOrNoButton = GeneralButton()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .systemBackground
+        addViews()
+        setButton(view: self,
+                  button: yesOrNoButton,
+                  title: "A N S W E R",
+                  bottom: 80,
+                  side: 120)
     }
     required init?(coder: NSCoder) {
         fatalError("unsupported")
+    }
+}
+private extension YesOrNoView {
+    func addViews() {
+        addSubview(yesOrNoButton)
     }
 }
