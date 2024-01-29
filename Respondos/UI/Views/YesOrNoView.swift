@@ -20,13 +20,20 @@ final class YesOrNoView: UIView {
                   title: "A N S W E R",
                   bottom: 80,
                   side: 120)
+        yesOrNoButton.addTarget(self, action: #selector(answerButton), for: .touchUpInside)
     }
+    
     required init?(coder: NSCoder) {
         fatalError("unsupported")
     }
 }
+
 private extension YesOrNoView {
     func addViews() {
         addSubview(yesOrNoButton)
+    }
+    
+    @objc func answerButton() {
+        print("yes or no")
     }
 }

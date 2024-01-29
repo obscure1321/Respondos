@@ -8,18 +8,20 @@
 import UIKit
 
 final class HeadsOrTailsView: UIView {
-    private var tossButton = GeneralButton()
+    private var headsOrTailsButton = GeneralButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .systemBackground
         addViews()
         setButton(view: self,
-                  button: tossButton,
+                  button: headsOrTailsButton,
                   title: "T O S S",
                   bottom: 80,
                   side: 120)
+        headsOrTailsButton.addTarget(self, action: #selector(tossButton), for: .touchUpInside)
     }
+    
     required init?(coder: NSCoder) {
         fatalError("unsupported")
     }
@@ -27,6 +29,10 @@ final class HeadsOrTailsView: UIView {
 
 private extension HeadsOrTailsView {
     func addViews() {
-        addSubview(tossButton)
+        addSubview(headsOrTailsButton)
+    }
+    
+    @objc func tossButton() {
+        print("heads or tails")
     }
 }
