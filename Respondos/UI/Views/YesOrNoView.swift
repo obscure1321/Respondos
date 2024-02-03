@@ -9,8 +9,10 @@ import UIKit
 import SnapKit
 
 final class YesOrNoView: UIView {
+    // MARK: - properties
     private var yesOrNoButton = GeneralButton()
     
+    // MARK: - initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .systemBackground
@@ -20,6 +22,7 @@ final class YesOrNoView: UIView {
                   title: "A N S W E R",
                   bottom: 80,
                   side: 120)
+        
         yesOrNoButton.addTarget(self, action: #selector(answerButton), for: .touchUpInside)
     }
     
@@ -28,6 +31,7 @@ final class YesOrNoView: UIView {
     }
 }
 
+// MARK: - extension for flow funcs
 private extension YesOrNoView {
     func addViews() {
         addSubview(yesOrNoButton)
