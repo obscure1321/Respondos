@@ -10,6 +10,19 @@ import UIKit
 final class HeadsOrTailsView: UIView {
     private var headsOrTailsButton = GeneralButton()
     
+    private var coinLabel: UILabel = {
+        let element = UILabel()
+        element.numberOfLines = 1
+        element.textAlignment = .center
+        element.textColor = #colorLiteral(red: 0.005332739092, green: 0.1982556581, blue: 0.1359425783, alpha: 1)
+        element.text = "H E A D S"
+        element.font = UIFont.boldSystemFont(ofSize: 24)
+        element.adjustsFontSizeToFitWidth = true
+        element.minimumScaleFactor = 0.7
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
     private var coinImageView: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleToFill
@@ -43,9 +56,17 @@ private extension HeadsOrTailsView {
     func addViews() {
         addSubview(headsOrTailsButton)
         addSubview(coinImageView)
+        addSubview(coinLabel)
     }
     
     func setConstraints() {
+        coinLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(40)
+            $0.trailing.equalToSuperview().offset(-40)
+            $0.top.greaterThanOrEqualTo(safeAreaLayoutGuide).offset(80)
+            $0.bottom.equalTo(coinImageView.snp.top).offset(-40)
+        }
+        
         coinImageView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(80)
             $0.trailing.equalToSuperview().offset(-80)
@@ -67,13 +88,14 @@ private extension HeadsOrTailsView {
         
     @objc func tossButton() {
         animateFlip(coinImageView)
-        print("sdasd")
-        let status = Bool.random()
+        let status = Int.random(in: 0 ... 100)
         
-        if status {
+        if status % 2 == 0 {
             coinImageView.image = UIImage(named: "heads")
+            coinLabel.text = "H E A D S"
         } else {
             coinImageView.image = UIImage(named: "tails")
+            coinLabel.text = "T A I L S"
         }
     }
 }

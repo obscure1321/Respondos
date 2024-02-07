@@ -12,11 +12,25 @@ final class YesOrNoView: UIView {
     // MARK: - properties
     private var yesOrNoButton = GeneralButton()
     
+    private var answerLabel: UILabel = {
+        let element = UILabel()
+        element.numberOfLines = 1
+        element.textAlignment = .center
+        element.text = "Yes/No"
+        element.textColor = #colorLiteral(red: 0.005332739092, green: 0.1982556581, blue: 0.1359425783, alpha: 1)
+        element.font = UIFont.boldSystemFont(ofSize: 40)
+        element.adjustsFontSizeToFitWidth = true
+        element.minimumScaleFactor = 0.7
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
     // MARK: - initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .systemBackground
         addViews()
+        setConstraints()
         setButton(view: self,
                   button: yesOrNoButton,
                   title: "A N S W E R",
@@ -35,9 +49,22 @@ final class YesOrNoView: UIView {
 private extension YesOrNoView {
     func addViews() {
         addSubview(yesOrNoButton)
+        addSubview(answerLabel)
+    }
+    
+    func setConstraints() {
+        answerLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
     
     @objc func answerButton() {
-        print("yes or no")
+        let number = Int.random(in: 0 ... 100)
+
+        if number % 2 == 0 {
+            self.answerLabel.text = " Y E S "
+        } else {
+            self.answerLabel.text = " N O "
+        }
     }
 }

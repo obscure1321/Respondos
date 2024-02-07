@@ -16,8 +16,8 @@ final class RandomizerViewController: UIViewController {
         view = contentView
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setUpNavBar(self.view, "Random Number")
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setUpNavBar(contentView, "Random Number")
     }
 }

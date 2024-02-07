@@ -13,17 +13,14 @@ final class TabBarViewController: UITabBarController {
     var viewModels = [
         ViewModel(
             vc: YesOrNoViewController(),
-            title: nil,
             image: UIImage(systemName: "eyes")!
         ),
         ViewModel(
             vc: HeadsOrTailsViewController(),
-            title: nil,
             image: UIImage(systemName: "bitcoinsign.circle.fill")!
         ),
         ViewModel(
             vc: RandomizerViewController(),
-            title: nil,
             image: UIImage(systemName: "cube.transparent.fill")!
         )]
     
@@ -33,7 +30,6 @@ final class TabBarViewController: UITabBarController {
         configureVC(viewModels: viewModels)
         changeColor()
         addShadow()
-        //        drawBezier()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +51,6 @@ private extension TabBarViewController {
         vcArray = viewModels.map { viewModel in
             let vc = viewModel.vc
             
-            vc.tabBarItem.title = viewModel.title
             vc.tabBarItem.image = viewModel.image
             
             return vc
@@ -123,7 +118,6 @@ extension TabBarViewController {
 extension TabBarViewController {
     struct ViewModel {
         var vc: UIViewController
-        var title: String?
         var image: UIImage
     }
 }

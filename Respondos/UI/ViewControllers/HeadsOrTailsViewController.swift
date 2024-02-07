@@ -16,8 +16,8 @@ final class HeadsOrTailsViewController: UIViewController {
         view = contentView
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setUpNavBar(self.view, "Heads or Tails")
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setUpNavBar(contentView, "Heads or Tails")
     }
 }

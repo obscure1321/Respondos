@@ -16,8 +16,8 @@ final class YesOrNoViewController: UIViewController {
         view = contentView
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setUpNavBar(self.view, "Yes or No")
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setUpNavBar(contentView, "Yes or No")
     }
 }
