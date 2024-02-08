@@ -16,8 +16,8 @@ final class HeadsOrTailsViewController: UIViewController {
         view = contentView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.parent?.title = "Pros and Cons"
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setUpNavBar(contentView, "Heads or Tails")
     }
 }

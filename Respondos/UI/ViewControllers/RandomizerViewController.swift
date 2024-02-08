@@ -16,8 +16,8 @@ final class RandomizerViewController: UIViewController {
         view = contentView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.parent?.title = "Random number"
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setUpNavBar(contentView, "Random Number")
     }
 }
