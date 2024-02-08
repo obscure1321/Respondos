@@ -8,9 +8,10 @@
 import UIKit
 
 final class HeadsOrTailsViewController: UIViewController {
-    
+    // MARK: - properties
     private let contentView = HeadsOrTailsView()
     
+    // MARK: - lifecycle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
         view = contentView
@@ -19,5 +20,27 @@ final class HeadsOrTailsViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setUpNavBar(contentView, "Heads or Tails")
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setLabelColor()
+    }
+}
+
+// MARK: - extension for text color changing funcs
+private extension HeadsOrTailsViewController {
+    func isDarkModeEnabled() -> Bool {
+         return traitCollection.userInterfaceStyle == .dark
+     }
+    
+    func setLabelColor() {
+        let isDarkMode = isDarkModeEnabled()
+        
+        if isDarkMode {
+            contentView.coinLabel.textColor = .white
+        } else {
+            contentView.coinLabel.textColor = .customGreen
+        }
     }
 }

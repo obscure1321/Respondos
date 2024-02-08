@@ -8,9 +8,10 @@
 import UIKit
 
 final class HeadsOrTailsView: UIView {
+    // MARK: - properties
     private var headsOrTailsButton = GeneralButton()
     
-    private var coinLabel: UILabel = {
+    var coinLabel: UILabel = {
         let element = UILabel()
         element.numberOfLines = 1
         element.textAlignment = .center
@@ -33,6 +34,7 @@ final class HeadsOrTailsView: UIView {
         return element
     }()
     
+    // MARK: - initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .systemBackground
@@ -52,6 +54,7 @@ final class HeadsOrTailsView: UIView {
     }
 }
 
+// MARK: - extension for flow funcs
 private extension HeadsOrTailsView {
     func addViews() {
         addSubview(headsOrTailsButton)
