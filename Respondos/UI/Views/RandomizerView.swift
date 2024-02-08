@@ -8,11 +8,12 @@
 import UIKit
 
 final class RandomizerView: UIView {
+    // MARK: - properties
     private var randomizerButton = GeneralButton()
     
     private lazy var randomNumber = Int()
     
-    private var numberLabel: UILabel = {
+    var numberLabel: UILabel = {
         let element = UILabel()
         element.numberOfLines = 1
         element.textAlignment = .center
@@ -25,6 +26,7 @@ final class RandomizerView: UIView {
         return element
     }()
     
+    // MARK: - initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .systemBackground
@@ -43,6 +45,7 @@ final class RandomizerView: UIView {
     }
 }
 
+// MARK: - extension for flow funcs
 private extension RandomizerView {
     func addViews() {
         addSubview(randomizerButton)
