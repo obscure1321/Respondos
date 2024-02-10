@@ -19,7 +19,7 @@ public func setUpNavBar(_ view: UIView, _ title: String) {
     
     navigationItem.largeTitleDisplayMode = .always
     navigationBar.items = [navigationItem]
-    navigationBar.backgroundColor = #colorLiteral(red: 0.005332739092, green: 0.1982556581, blue: 0.1359425783, alpha: 1)
+    navigationBar.backgroundColor = .customGreen
     navigationBar.prefersLargeTitles = true
     navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     

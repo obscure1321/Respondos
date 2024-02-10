@@ -15,8 +15,8 @@ final class HeadsOrTailsView: UIView {
         let element = UILabel()
         element.numberOfLines = 1
         element.textAlignment = .center
-        element.textColor = #colorLiteral(red: 0.005332739092, green: 0.1982556581, blue: 0.1359425783, alpha: 1)
         element.text = "H E A D S"
+        element.textColor = .customGreen
         element.font = UIFont.boldSystemFont(ofSize: 24)
         element.adjustsFontSizeToFitWidth = true
         element.minimumScaleFactor = 0.7

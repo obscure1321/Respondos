@@ -26,7 +26,7 @@ private extension GeneralButton {
         setTitleColor(.white, for: .normal)
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = 0.5
-        backgroundColor = #colorLiteral(red: 0.005332739092, green: 0.1982556581, blue: 0.1359425783, alpha: 1)
+        backgroundColor = .customGreen
         layer.cornerRadius = 24
         translatesAutoresizingMaskIntoConstraints = false
     }

@@ -71,7 +71,7 @@ private extension TabBarViewController {
     }
     
     private func changeColor(){
-        tabBar.backgroundColor = #colorLiteral(red: 0.005332739092, green: 0.1982556581, blue: 0.1359425783, alpha: 1)
+        tabBar.backgroundColor = .customGreen
         self.tabBar.unselectedItemTintColor = .gray
         self.tabBar.tintColor = .white
     }

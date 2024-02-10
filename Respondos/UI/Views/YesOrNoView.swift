@@ -17,6 +17,7 @@ final class YesOrNoView: UIView {
         element.numberOfLines = 1
         element.textAlignment = .center
         element.text = "Yes/No"
+        element.textColor = .customGreen
         element.font = UIFont.boldSystemFont(ofSize: 40)
         element.adjustsFontSizeToFitWidth = true
         element.minimumScaleFactor = 0.7
