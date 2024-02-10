@@ -19,4 +19,4 @@
 
 ## Презентация
 
-![Image](https://github.com/obscure1321/Respondos/blob/development/Presentation/LaunchScreen.png) ![Video](https://github.com/obscure1321/Respondos/blob/development/Presentation/ScreenCast.gif)
+![Video](https://github.com/obscure1321/Respondos/blob/development/Presentation/ScreenCast.gif)
