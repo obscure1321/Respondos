@@ -9,6 +9,7 @@ import UIKit
 
 final class HeadsOrTailsView: UIView {
     // MARK: - properties
+    private let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
     private var headsOrTailsButton = GeneralButton()
     
     var coinLabel: UILabel = {
@@ -47,6 +48,7 @@ final class HeadsOrTailsView: UIView {
         setConstraints()
         
         headsOrTailsButton.addTarget(self, action: #selector(tossButton), for: .touchUpInside)
+        vibroGenerator.prepare()
     }
     
     required init?(coder: NSCoder) {
@@ -90,6 +92,9 @@ private extension HeadsOrTailsView {
     }
         
     @objc func tossButton() {
+        vibroGenerator.impactOccurred()
+        headsOrTailsButton.isEnabled = false
+        
         animateFlip(coinImageView)
         coinLabel.text = "♗♗♗"
         let status = Int.random(in: 0 ... 100)
@@ -99,12 +104,14 @@ private extension HeadsOrTailsView {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.coinLabel.text = "H E A D S"
+                self.headsOrTailsButton.isEnabled = true
             }
         } else {
             coinImageView.image = UIImage(named: "tails")
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.coinLabel.text = "T A I L S"
+                self.headsOrTailsButton.isEnabled = true
             }
         }
     }

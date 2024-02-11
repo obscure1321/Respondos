@@ -15,6 +15,7 @@ final class YesOrNoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = contentView
+        setLabelColor()
     }
     
     override func viewWillLayoutSubviews() {

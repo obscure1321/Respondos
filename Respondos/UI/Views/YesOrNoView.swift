@@ -10,6 +10,7 @@ import SnapKit
 
 final class YesOrNoView: UIView {
     // MARK: - properties
+    private let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
     private var yesOrNoButton = GeneralButton()
     
     var answerLabel: UILabel = {
@@ -38,6 +39,7 @@ final class YesOrNoView: UIView {
                   side: 120)
         
         yesOrNoButton.addTarget(self, action: #selector(answerButton), for: .touchUpInside)
+        vibroGenerator.prepare()
     }
     
     required init?(coder: NSCoder) {
@@ -59,6 +61,8 @@ private extension YesOrNoView {
     }
     
     @objc func answerButton() {
+        vibroGenerator.impactOccurred()
+        yesOrNoButton.isEnabled = false
         answerLabel.text = "♗"
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
@@ -69,6 +73,8 @@ private extension YesOrNoView {
             } else {
                 self.answerLabel.text = " N O "
             }
+            
+            self.yesOrNoButton.isEnabled = true
         }
     }
 }
