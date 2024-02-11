@@ -11,8 +11,6 @@ final class RandomizerView: UIView {
     // MARK: - properties
     private var randomizerButton = GeneralButton()
     
-    private lazy var randomNumber = Int()
-    
     var numberLabel: UILabel = {
         let element = UILabel()
         element.numberOfLines = 1
@@ -59,7 +57,11 @@ private extension RandomizerView {
     }
     
     @objc func rollButton() {
-        randomNumber = Int.random(in: 0 ... 100)
-        numberLabel.text = "\(randomNumber)"
+        numberLabel.text = "♗"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            let randomNumber = Int.random(in: 0 ... 100)
+            self.numberLabel.text = "\(randomNumber)"
+        }
     }
 }

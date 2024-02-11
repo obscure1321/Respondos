@@ -91,14 +91,21 @@ private extension HeadsOrTailsView {
         
     @objc func tossButton() {
         animateFlip(coinImageView)
+        coinLabel.text = "♗♗♗"
         let status = Int.random(in: 0 ... 100)
         
         if status % 2 == 0 {
             coinImageView.image = UIImage(named: "heads")
-            coinLabel.text = "H E A D S"
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.coinLabel.text = "H E A D S"
+            }
         } else {
             coinImageView.image = UIImage(named: "tails")
-            coinLabel.text = "T A I L S"
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.coinLabel.text = "T A I L S"
+            }
         }
     }
 }

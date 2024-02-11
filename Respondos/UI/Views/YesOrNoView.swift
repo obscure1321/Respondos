@@ -59,12 +59,16 @@ private extension YesOrNoView {
     }
     
     @objc func answerButton() {
-        let number = Int.random(in: 0 ... 100)
-
-        if number % 2 == 0 {
-            self.answerLabel.text = " Y E S "
-        } else {
-            self.answerLabel.text = " N O "
+        answerLabel.text = "♗"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            let number = Int.random(in: 0 ... 100)
+            
+            if number % 2 == 0 {
+                self.answerLabel.text = " Y E S "
+            } else {
+                self.answerLabel.text = " N O "
+            }
         }
     }
 }
