@@ -9,9 +9,50 @@ import UIKit
 
 final class RandomizerView: UIView {
     // MARK: - properties
-    private var randomizerButton = GeneralButton()
+    let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
+    var randomizerButton = GeneralButton()
     
-    private lazy var randomNumber = Int()
+    var minNumber: Int? = nil
+    var maxNumber: Int? = nil
+    
+    var rangeLabel: UILabel = {
+        let element = UILabel()
+        element.numberOfLines = 1
+        element.textAlignment = .center
+        element.text = "Set the range"
+        element.textColor = .customGreen
+        element.font = UIFont.boldSystemFont(ofSize: 24)
+        element.adjustsFontSizeToFitWidth = true
+        element.minimumScaleFactor = 0.7
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
+    var minTextField: UITextField = {
+        let element = UITextField()
+        element.backgroundColor = .customGreen
+        element.textColor = .white
+        element.attributedPlaceholder = NSAttributedString(
+            string: "min",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        element.borderStyle = .roundedRect
+        element.keyboardType = .numberPad
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
+    var maxTextField: UITextField = {
+        let element = UITextField()
+        element.backgroundColor = .customGreen
+        element.textColor = .white
+        element.attributedPlaceholder = NSAttributedString(
+            string: "max",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        element.borderStyle = .roundedRect
+        element.keyboardType = .numberPad
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
     
     var numberLabel: UILabel = {
         let element = UILabel()
@@ -37,7 +78,6 @@ final class RandomizerView: UIView {
                   title: "R O L L",
                   bottom: 80,
                   side: 120)
-        randomizerButton.addTarget(self, action: #selector(rollButton), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -49,17 +89,36 @@ final class RandomizerView: UIView {
 private extension RandomizerView {
     func addViews() {
         addSubview(randomizerButton)
+        addSubview(rangeLabel)
+        addSubview(minTextField)
+        addSubview(maxTextField)
         addSubview(numberLabel)
     }
     
     func setConstraints() {
+        rangeLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(80)
+            $0.leading.equalToSuperview().offset(40)
+            $0.trailing.equalToSuperview().offset(-40)
+            $0.height.equalTo(40)
+        }
+        
+        minTextField.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(40)
+            $0.top.equalTo(rangeLabel.snp.bottom).offset(20)
+            $0.height.equalTo(40)
+            $0.width.equalToSuperview().multipliedBy(0.3)
+        }
+        
+        maxTextField.snp.makeConstraints {
+            $0.trailing.equalToSuperview().offset(-40)
+            $0.top.equalTo(rangeLabel.snp.bottom).offset(20)
+            $0.height.equalTo(40)
+            $0.width.equalToSuperview().multipliedBy(0.3)
+        }
+        
         numberLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
-    }
-    
-    @objc func rollButton() {
-        randomNumber = Int.random(in: 0 ... 100)
-        numberLabel.text = "\(randomNumber)"
     }
 }
