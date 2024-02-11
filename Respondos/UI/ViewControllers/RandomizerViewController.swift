@@ -42,8 +42,10 @@ private extension RandomizerViewController {
         
         if isDarkMode {
             contentView.numberLabel.textColor = .white
+            contentView.rangeLabel.textColor = .white
         } else {
             contentView.numberLabel.textColor = .customGreen
+            contentView.rangeLabel.textColor = .customGreen
         }
     }
     

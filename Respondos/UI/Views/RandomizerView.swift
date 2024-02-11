@@ -15,6 +15,19 @@ final class RandomizerView: UIView {
     var minNumber: Int? = nil
     var maxNumber: Int? = nil
     
+    var rangeLabel: UILabel = {
+        let element = UILabel()
+        element.numberOfLines = 1
+        element.textAlignment = .center
+        element.text = "Set the range"
+        element.textColor = .customGreen
+        element.font = UIFont.boldSystemFont(ofSize: 24)
+        element.adjustsFontSizeToFitWidth = true
+        element.minimumScaleFactor = 0.7
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
     var minTextField: UITextField = {
         let element = UITextField()
         element.backgroundColor = .customGreen
@@ -76,28 +89,36 @@ final class RandomizerView: UIView {
 private extension RandomizerView {
     func addViews() {
         addSubview(randomizerButton)
-        addSubview(numberLabel)
+        addSubview(rangeLabel)
         addSubview(minTextField)
         addSubview(maxTextField)
+        addSubview(numberLabel)
     }
     
     func setConstraints() {
-        numberLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
+        rangeLabel.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).offset(80)
+            $0.leading.equalToSuperview().offset(40)
+            $0.trailing.equalToSuperview().offset(-40)
+            $0.height.equalTo(40)
         }
         
         minTextField.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(40)
-            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
+            $0.top.equalTo(rangeLabel.snp.bottom).offset(20)
             $0.height.equalTo(40)
             $0.width.equalToSuperview().multipliedBy(0.3)
         }
         
         maxTextField.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-40)
-            $0.top.equalTo(safeAreaLayoutGuide).offset(40)
+            $0.top.equalTo(rangeLabel.snp.bottom).offset(20)
             $0.height.equalTo(40)
             $0.width.equalToSuperview().multipliedBy(0.3)
+        }
+        
+        numberLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 }
