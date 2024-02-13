@@ -12,8 +12,8 @@ final class RandomizerView: UIView {
     let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
     var randomizerButton = GeneralButton()
     
-    var minNumber: Int? = nil
-    var maxNumber: Int? = nil
+    var minNumber: Int? = 0
+    var maxNumber: Int? = 100
     
     var rangeLabel: UILabel = {
         let element = UILabel()
@@ -32,6 +32,7 @@ final class RandomizerView: UIView {
         let element = UITextField()
         element.backgroundColor = .customGreen
         element.textColor = .white
+        element.text = "0"
         element.attributedPlaceholder = NSAttributedString(
             string: "min",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
@@ -45,6 +46,7 @@ final class RandomizerView: UIView {
         let element = UITextField()
         element.backgroundColor = .customGreen
         element.textColor = .white
+        element.text = "100"
         element.attributedPlaceholder = NSAttributedString(
             string: "max",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])

@@ -85,13 +85,9 @@ private extension RandomizerViewController {
     
     @objc func rollButton() {
         if contentView.minNumber == nil && contentView.maxNumber == nil {
-            showAlert(title: "In case of no range you will get number by default range: 0 ... 100")
-            contentView.minNumber = 0
-            contentView.minTextField.text = "0"
-            contentView.maxNumber = 100
-            contentView.maxTextField.text = "100"
+            showAlert(title: "You need to set the range")
         } else if contentView.minNumber == nil || contentView.maxNumber == nil {
-            showAlert(title: "Set second border")
+            showAlert(title: "You need to set second border")
         }
         
         guard contentView.minNumber != nil, contentView.maxNumber != nil else { return }
