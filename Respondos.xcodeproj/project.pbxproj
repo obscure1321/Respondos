@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D2129202B7BA3E7004CE41C /* coinSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D21291F2B7BA3E7004CE41C /* coinSound.wav */; };
+		6D2129242B7CBCAB004CE41C /* randomizerSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D2129222B7CBCAB004CE41C /* randomizerSound.wav */; };
+		6D21292B2B7CC97B004CE41C /* yesOrNoSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D21292A2B7CC97B004CE41C /* yesOrNoSound.wav */; };
 		6D350EFB2B74CC5900138AB9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D350EFA2B74CC5900138AB9 /* Extensions.swift */; };
 		6DA895272B60F6EF00C43F82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895262B60F6EF00C43F82 /* AppDelegate.swift */; };
 		6DA895292B60F6EF00C43F82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895282B60F6EF00C43F82 /* SceneDelegate.swift */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		107EFDA054DA47FCD0DE9F83 /* Pods-Respondos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respondos.release.xcconfig"; path = "Target Support Files/Pods-Respondos/Pods-Respondos.release.xcconfig"; sourceTree = "<group>"; };
 		6D21291F2B7BA3E7004CE41C /* coinSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coinSound.wav; sourceTree = "<group>"; };
+		6D2129222B7CBCAB004CE41C /* randomizerSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = randomizerSound.wav; sourceTree = "<group>"; };
+		6D21292A2B7CC97B004CE41C /* yesOrNoSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yesOrNoSound.wav; sourceTree = "<group>"; };
 		6D350EFA2B74CC5900138AB9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6DA895232B60F6EE00C43F82 /* Respondos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Respondos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA895262B60F6EF00C43F82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				6D21291F2B7BA3E7004CE41C /* coinSound.wav */,
+				6D21292A2B7CC97B004CE41C /* yesOrNoSound.wav */,
+				6D2129222B7CBCAB004CE41C /* randomizerSound.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D2129242B7CBCAB004CE41C /* randomizerSound.wav in Resources */,
+				6D21292B2B7CC97B004CE41C /* yesOrNoSound.wav in Resources */,
 				6DA895332B60F6F000C43F82 /* LaunchScreen.storyboard in Resources */,
 				6D2129202B7BA3E7004CE41C /* coinSound.wav in Resources */,
 				6DA895302B60F6F000C43F82 /* Assets.xcassets in Resources */,

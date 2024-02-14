@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import SnapKit
 
 final class HeadsOrTailsView: UIView {
     // MARK: - properties

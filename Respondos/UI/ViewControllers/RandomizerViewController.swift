@@ -72,6 +72,7 @@ private extension RandomizerViewController {
     
     private func getRandomNumber() {
         contentView.vibroGenerator.impactOccurred()
+        contentView.playSound()
         contentView.randomizerButton.isEnabled = false
         
         contentView.numberLabel.text = "♗"

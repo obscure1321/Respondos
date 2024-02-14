@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 final class RandomizerView: UIView {
     // MARK: - properties
+    var player: AVAudioPlayer!
+    
     let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
     var randomizerButton = GeneralButton()
     
@@ -88,7 +91,7 @@ final class RandomizerView: UIView {
 }
 
 // MARK: - extension for flow funcs
-private extension RandomizerView {
+extension RandomizerView {
     func addViews() {
         addSubview(randomizerButton)
         addSubview(rangeLabel)
@@ -122,5 +125,11 @@ private extension RandomizerView {
         numberLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+    }
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "randomizerSound", withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
 }

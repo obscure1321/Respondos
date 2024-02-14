@@ -6,10 +6,12 @@
 //
 
 import UIKit
-import SnapKit
+import AVFoundation
 
 final class YesOrNoView: UIView {
     // MARK: - properties
+    var player: AVAudioPlayer!
+    
     private let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
     private var yesOrNoButton = GeneralButton()
     
@@ -60,8 +62,15 @@ private extension YesOrNoView {
         }
     }
     
+    func playSound() {
+        let url = Bundle.main.url(forResource: "yesOrNoSound", withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+    }
+    
     @objc func answerButton() {
         vibroGenerator.impactOccurred()
+        playSound()
         yesOrNoButton.isEnabled = false
         answerLabel.text = "♗"
         
