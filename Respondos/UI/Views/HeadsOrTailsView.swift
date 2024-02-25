@@ -20,7 +20,7 @@ final class HeadsOrTailsView: UIView {
         let element = UILabel()
         element.numberOfLines = 1
         element.textAlignment = .center
-        element.text = "H E A D S"
+        element.text = NSLocalizedString("headsSide", comment: "heads for label")
         element.textColor = .customGreen
         element.font = UIFont.boldSystemFont(ofSize: 24)
         element.adjustsFontSizeToFitWidth = true
@@ -46,7 +46,7 @@ final class HeadsOrTailsView: UIView {
         addViews()
         setButton(view: self,
                   button: headsOrTailsButton,
-                  title: "T O S S",
+                  title: NSLocalizedString("tossButton", comment: "button title for Heads or Tails vc"),
                   bottom: 80,
                   side: 120)
         setConstraints()
@@ -113,13 +113,13 @@ private extension HeadsOrTailsView {
         if status % 2 == 0 {
             coinImageView.image = UIImage(named: "heads")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-                self.coinLabel.text = "H E A D S"
+                self.coinLabel.text = NSLocalizedString("headsSide", comment: "heads for label")
                 self.headsOrTailsButton.isEnabled = true
             }
         } else {
             coinImageView.image = UIImage(named: "tails")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-                self.coinLabel.text = "T A I L S"
+                self.coinLabel.text = NSLocalizedString("tailsSide", comment: "tails for label")
                 self.headsOrTailsButton.isEnabled = true
             }
         }

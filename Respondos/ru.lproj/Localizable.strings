@@ -1,0 +1,42 @@
+// MARK: - yes or no
+"yesNoLabel" = " Да/Нет ";
+
+"answeButton" = "  ОТВЕТИТЬ  ";
+
+"yesLabel" = " Д А ";
+ 
+"noLabel" = " Н Е Т ";
+
+"navbarYesOrNo" = " Да или Нет ";
+
+// MARK: - heads or tails
+"headsSide" = " Р Е Ш К А ";
+
+"tailsSide" = " О Р Ё Л ";
+
+"tossButton" = "  ПОДБРОСИТЬ  ";
+
+"navbarHeadsOrTails" = " Орёл или Решка ";
+
+// MARK: - randomizer
+"rangeLabel" = " Установите диапазон ";
+
+"min" = "мин";
+
+"max" = "макс";
+
+"rollButton" = "  СГЕНЕРИРОВАТЬ  ";
+
+"navbarRandomizer" = " Рандомайзер ";
+
+"bothNilAlert" = "Установите границы диапизона";
+
+"oneNilAlert" = "Установите вторую границу диапизона";
+
+"minHigher" = "Левое значение должно быть меньше, чем правое";
+
+//"You need to set the range"
+//
+//"You need to set second border"
+//
+//"Minimum border must be lower or equal than maximum border"

@@ -11,6 +11,9 @@
 		6D2129242B7CBCAB004CE41C /* randomizerSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D2129222B7CBCAB004CE41C /* randomizerSound.wav */; };
 		6D21292B2B7CC97B004CE41C /* yesOrNoSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D21292A2B7CC97B004CE41C /* yesOrNoSound.wav */; };
 		6D350EFB2B74CC5900138AB9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D350EFA2B74CC5900138AB9 /* Extensions.swift */; };
+		6D57FFDB2B7FBDBB00CB2BF9 /* RespondosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D57FFDA2B7FBDBB00CB2BF9 /* RespondosTests.swift */; };
+		6D57FFE22B7FBDE500CB2BF9 /* YesOrNoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D57FFE12B7FBDE500CB2BF9 /* YesOrNoTest.swift */; };
+		6D7ABD622B8B99D90003F716 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D7ABD642B8B99D90003F716 /* Localizable.strings */; };
 		6DA895272B60F6EF00C43F82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895262B60F6EF00C43F82 /* AppDelegate.swift */; };
 		6DA895292B60F6EF00C43F82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA895282B60F6EF00C43F82 /* SceneDelegate.swift */; };
 		6DA895302B60F6F000C43F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA8952F2B60F6F000C43F82 /* Assets.xcassets */; };
@@ -27,12 +30,28 @@
 		8B9A83A86C9313C16E92F648 /* Pods_Respondos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA27B0BF14D462401669CD98 /* Pods_Respondos.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6D57FFDC2B7FBDBB00CB2BF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DA8951B2B60F6EE00C43F82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DA895222B60F6EE00C43F82;
+			remoteInfo = Respondos;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		107EFDA054DA47FCD0DE9F83 /* Pods-Respondos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respondos.release.xcconfig"; path = "Target Support Files/Pods-Respondos/Pods-Respondos.release.xcconfig"; sourceTree = "<group>"; };
 		6D21291F2B7BA3E7004CE41C /* coinSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coinSound.wav; sourceTree = "<group>"; };
 		6D2129222B7CBCAB004CE41C /* randomizerSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = randomizerSound.wav; sourceTree = "<group>"; };
 		6D21292A2B7CC97B004CE41C /* yesOrNoSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yesOrNoSound.wav; sourceTree = "<group>"; };
 		6D350EFA2B74CC5900138AB9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6D57FFD82B7FBDBB00CB2BF9 /* RespondosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RespondosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D57FFDA2B7FBDBB00CB2BF9 /* RespondosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespondosTests.swift; sourceTree = "<group>"; };
+		6D57FFE12B7FBDE500CB2BF9 /* YesOrNoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesOrNoTest.swift; sourceTree = "<group>"; };
+		6D7ABD5F2B8B96480003F716 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6D7ABD632B8B99D90003F716 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6D7ABD672B8B9A190003F716 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6DA895232B60F6EE00C43F82 /* Respondos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Respondos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA895262B60F6EF00C43F82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DA895282B60F6EF00C43F82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6D57FFD52B7FBDBB00CB2BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DA895202B60F6EE00C43F82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,10 +109,20 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		6D57FFD92B7FBDBB00CB2BF9 /* RespondosTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D57FFDA2B7FBDBB00CB2BF9 /* RespondosTests.swift */,
+				6D57FFE12B7FBDE500CB2BF9 /* YesOrNoTest.swift */,
+			);
+			path = RespondosTests;
+			sourceTree = "<group>";
+		};
 		6DA8951A2B60F6EE00C43F82 = {
 			isa = PBXGroup;
 			children = (
 				6DA895252B60F6EE00C43F82 /* Respondos */,
+				6D57FFD92B7FBDBB00CB2BF9 /* RespondosTests */,
 				6DA895242B60F6EE00C43F82 /* Products */,
 				414DB8C0340A42259E5183CE /* Pods */,
 				A48AE46F15CA6D8B63CDBF3B /* Frameworks */,
@@ -97,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				6DA895232B60F6EE00C43F82 /* Respondos.app */,
+				6D57FFD82B7FBDBB00CB2BF9 /* RespondosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +147,7 @@
 				6DA8952F2B60F6F000C43F82 /* Assets.xcassets */,
 				6DA895312B60F6F000C43F82 /* LaunchScreen.storyboard */,
 				6DA895342B60F6F000C43F82 /* Info.plist */,
+				6D7ABD642B8B99D90003F716 /* Localizable.strings */,
 			);
 			path = Respondos;
 			sourceTree = "<group>";
@@ -183,6 +221,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6D57FFD72B7FBDBB00CB2BF9 /* RespondosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D57FFE02B7FBDBB00CB2BF9 /* Build configuration list for PBXNativeTarget "RespondosTests" */;
+			buildPhases = (
+				6D57FFD42B7FBDBB00CB2BF9 /* Sources */,
+				6D57FFD52B7FBDBB00CB2BF9 /* Frameworks */,
+				6D57FFD62B7FBDBB00CB2BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D57FFDD2B7FBDBB00CB2BF9 /* PBXTargetDependency */,
+			);
+			name = RespondosTests;
+			productName = RespondosTests;
+			productReference = 6D57FFD82B7FBDBB00CB2BF9 /* RespondosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6DA895222B60F6EE00C43F82 /* Respondos */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DA895372B60F6F000C43F82 /* Build configuration list for PBXNativeTarget "Respondos" */;
@@ -212,6 +268,10 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					6D57FFD72B7FBDBB00CB2BF9 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 6DA895222B60F6EE00C43F82;
+					};
 					6DA895222B60F6EE00C43F82 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -224,6 +284,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 6DA8951A2B60F6EE00C43F82;
 			productRefGroup = 6DA895242B60F6EE00C43F82 /* Products */;
@@ -231,16 +292,25 @@
 			projectRoot = "";
 			targets = (
 				6DA895222B60F6EE00C43F82 /* Respondos */,
+				6D57FFD72B7FBDBB00CB2BF9 /* RespondosTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6D57FFD62B7FBDBB00CB2BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DA895212B60F6EE00C43F82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6D2129242B7CBCAB004CE41C /* randomizerSound.wav in Resources */,
+				6D7ABD622B8B99D90003F716 /* Localizable.strings in Resources */,
 				6D21292B2B7CC97B004CE41C /* yesOrNoSound.wav in Resources */,
 				6DA895332B60F6F000C43F82 /* LaunchScreen.storyboard in Resources */,
 				6D2129202B7BA3E7004CE41C /* coinSound.wav in Resources */,
@@ -293,6 +363,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6D57FFD42B7FBDBB00CB2BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D57FFDB2B7FBDBB00CB2BF9 /* RespondosTests.swift in Sources */,
+				6D57FFE22B7FBDE500CB2BF9 /* YesOrNoTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DA8951F2B60F6EE00C43F82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,11 +393,29 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6D57FFDD2B7FBDBB00CB2BF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DA895222B60F6EE00C43F82 /* Respondos */;
+			targetProxy = 6D57FFDC2B7FBDBB00CB2BF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		6D7ABD642B8B99D90003F716 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D7ABD632B8B99D90003F716 /* ru */,
+				6D7ABD672B8B9A190003F716 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6DA895312B60F6F000C43F82 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6DA895322B60F6F000C43F82 /* Base */,
+				6D7ABD5F2B8B96480003F716 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -326,11 +423,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6D57FFDE2B7FBDBB00CB2BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKDHHVW363;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-05.RespondosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Respondos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Respondos";
+				TVOS_DEPLOYMENT_TARGET = 15.0;
+			};
+			name = Debug;
+		};
+		6D57FFDF2B7FBDBB00CB2BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKDHHVW363;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-05.RespondosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Respondos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Respondos";
+				TVOS_DEPLOYMENT_TARGET = 15.0;
+			};
+			name = Release;
+		};
 		6DA895352B60F6F000C43F82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -378,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -394,6 +534,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -435,7 +576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -506,6 +647,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6D57FFE02B7FBDBB00CB2BF9 /* Build configuration list for PBXNativeTarget "RespondosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D57FFDE2B7FBDBB00CB2BF9 /* Debug */,
+				6D57FFDF2B7FBDBB00CB2BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6DA8951E2B60F6EE00C43F82 /* Build configuration list for PBXProject "Respondos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

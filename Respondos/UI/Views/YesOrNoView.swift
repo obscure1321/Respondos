@@ -13,13 +13,13 @@ final class YesOrNoView: UIView {
     var player: AVAudioPlayer!
     
     private let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
-    private var yesOrNoButton = GeneralButton()
+    var yesOrNoButton = GeneralButton()
     
     var answerLabel: UILabel = {
         let element = UILabel()
         element.numberOfLines = 1
         element.textAlignment = .center
-        element.text = "Yes/No"
+        element.text = NSLocalizedString("yesNoLabel", comment: "text on the main label in YesOrNoView")
         element.textColor = .customGreen
         element.font = UIFont.boldSystemFont(ofSize: 40)
         element.adjustsFontSizeToFitWidth = true
@@ -36,7 +36,7 @@ final class YesOrNoView: UIView {
         setConstraints()
         setButton(view: self,
                   button: yesOrNoButton,
-                  title: "A N S W E R",
+                  title: NSLocalizedString("answeButton", comment: "answer button title"),
                   bottom: 80,
                   side: 120)
         
@@ -50,7 +50,7 @@ final class YesOrNoView: UIView {
 }
 
 // MARK: - extension for flow funcs
-private extension YesOrNoView {
+ extension YesOrNoView {
     func addViews() {
         addSubview(yesOrNoButton)
         addSubview(answerLabel)
@@ -78,9 +78,9 @@ private extension YesOrNoView {
             let number = Int.random(in: 0 ... 100)
             
             if number % 2 == 0 {
-                self.answerLabel.text = " Y E S "
+                self.answerLabel.text = NSLocalizedString("yesLabel", comment: "label text when answer is Yes")
             } else {
-                self.answerLabel.text = " N O "
+                self.answerLabel.text = NSLocalizedString("noLabel", comment: "label text when answer is No")
             }
             
             self.yesOrNoButton.isEnabled = true

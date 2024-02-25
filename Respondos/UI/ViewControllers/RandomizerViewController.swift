@@ -22,7 +22,7 @@ final class RandomizerViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        setUpNavBar(contentView, "Random Number")
+        setUpNavBar(contentView, NSLocalizedString("navbarRandomizer", comment: "navbar title for randomizer"))
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -86,9 +86,9 @@ private extension RandomizerViewController {
     
     @objc func rollButton() {
         if contentView.minNumber == nil && contentView.maxNumber == nil {
-            showAlert(title: "You need to set the range")
+            showAlert(title: NSLocalizedString("bothNilAlert", comment: "alert text when both borders is nil"))
         } else if contentView.minNumber == nil || contentView.maxNumber == nil {
-            showAlert(title: "You need to set second border")
+            showAlert(title: NSLocalizedString("oneNilAlert", comment: "alert text when one border is nil"))
         }
         
         guard contentView.minNumber != nil, contentView.maxNumber != nil else { return }
@@ -96,7 +96,7 @@ private extension RandomizerViewController {
         if contentView.minNumber! <= contentView.maxNumber! {
             getRandomNumber()
         } else {
-            showAlert(title: "Minimum border must be lower or equal than maximum border")
+            showAlert(title: NSLocalizedString("minHigher", comment: "alert text when min is higher than max"))
         }
     }
     

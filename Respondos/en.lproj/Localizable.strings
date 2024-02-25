@@ -1,0 +1,36 @@
+// MARK: - yes or no
+"yesNoLabel" = " Yes/No ";
+
+"answeButton" = " A N S W E R ";
+
+"yesLabel" = " Y E S ";
+ 
+"noLabel" = " N O ";
+
+"navbarYesOrNo" = " Yes or No ";
+
+// MARK: - heads or tails
+"headsSide" = " H E A D S ";
+
+"tailsSide" = " T A I L S ";
+
+"tossButton" = " T O S S ";
+
+"navbarHeadsOrTails" = " Heads or Tails ";
+
+// MARK: - randomizer
+"rangeLabel" = " Set the range ";
+
+"min" = "min";
+
+"max" = "max";
+
+"rollButton" = " R O L L ";
+
+"navbarRandomizer" = " Randomizer ";
+
+"bothNilAlert" = "You need to set the range";
+
+"oneNilAlert" = "You need to set second border";
+
+"minHigher" = "Minimum border must be lower or equal than maximum border";
