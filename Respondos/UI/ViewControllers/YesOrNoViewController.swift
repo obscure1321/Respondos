@@ -20,7 +20,7 @@ final class YesOrNoViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        setUpNavBar(contentView, "Yes or No")
+        setUpNavBar(contentView, NSLocalizedString("navbarYesOrNo", comment: "navbar title for yesOrNo VC"))
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

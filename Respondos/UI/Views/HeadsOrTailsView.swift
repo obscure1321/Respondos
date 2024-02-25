@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import AVFoundation
+import SnapKit
 
 final class HeadsOrTailsView: UIView {
     // MARK: - properties
+    private var player: AVAudioPlayer!
+    
     private let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
     private var headsOrTailsButton = GeneralButton()
     
@@ -16,7 +20,7 @@ final class HeadsOrTailsView: UIView {
         let element = UILabel()
         element.numberOfLines = 1
         element.textAlignment = .center
-        element.text = "H E A D S"
+        element.text = NSLocalizedString("headsSide", comment: "heads for label")
         element.textColor = .customGreen
         element.font = UIFont.boldSystemFont(ofSize: 24)
         element.adjustsFontSizeToFitWidth = true
@@ -42,7 +46,7 @@ final class HeadsOrTailsView: UIView {
         addViews()
         setButton(view: self,
                   button: headsOrTailsButton,
-                  title: "T O S S",
+                  title: NSLocalizedString("tossButton", comment: "button title for Heads or Tails vc"),
                   bottom: 80,
                   side: 120)
         setConstraints()
@@ -86,31 +90,36 @@ private extension HeadsOrTailsView {
         flip.endProgress = 1.0
         flip.type = CATransitionType(rawValue: "flip")
         flip.subtype = CATransitionSubtype(rawValue: "fromRight")
-        flip.duration = 0.18
-        flip.repeatCount = 5
+        flip.duration = 0.1
+        flip.repeatCount = 12
         view.layer.add(flip, forKey: "transition")
+    }
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "coinSound", withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
         
     @objc func tossButton() {
+        playSound()
         vibroGenerator.impactOccurred()
         headsOrTailsButton.isEnabled = false
-        
         animateFlip(coinImageView)
         coinLabel.text = "♗♗♗"
+        
         let status = Int.random(in: 0 ... 100)
         
         if status % 2 == 0 {
             coinImageView.image = UIImage(named: "heads")
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.coinLabel.text = "H E A D S"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                self.coinLabel.text = NSLocalizedString("headsSide", comment: "heads for label")
                 self.headsOrTailsButton.isEnabled = true
             }
         } else {
             coinImageView.image = UIImage(named: "tails")
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.coinLabel.text = "T A I L S"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                self.coinLabel.text = NSLocalizedString("tailsSide", comment: "tails for label")
                 self.headsOrTailsButton.isEnabled = true
             }
         }

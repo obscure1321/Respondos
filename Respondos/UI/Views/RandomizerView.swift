@@ -6,20 +6,23 @@
 //
 
 import UIKit
+import AVFoundation
 
 final class RandomizerView: UIView {
     // MARK: - properties
+    var player: AVAudioPlayer!
+    
     let vibroGenerator = UIImpactFeedbackGenerator(style: .soft)
     var randomizerButton = GeneralButton()
     
-    var minNumber: Int? = nil
-    var maxNumber: Int? = nil
+    var minNumber: Int? = 0
+    var maxNumber: Int? = 100
     
     var rangeLabel: UILabel = {
         let element = UILabel()
         element.numberOfLines = 1
         element.textAlignment = .center
-        element.text = "Set the range"
+        element.text = NSLocalizedString("rangeLabel", comment: "text for label with range")
         element.textColor = .customGreen
         element.font = UIFont.boldSystemFont(ofSize: 24)
         element.adjustsFontSizeToFitWidth = true
@@ -32,8 +35,9 @@ final class RandomizerView: UIView {
         let element = UITextField()
         element.backgroundColor = .customGreen
         element.textColor = .white
+        element.text = "0"
         element.attributedPlaceholder = NSAttributedString(
-            string: "min",
+            string: NSLocalizedString("min", comment: "placeholder for lower limit"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         element.borderStyle = .roundedRect
         element.keyboardType = .numberPad
@@ -45,8 +49,9 @@ final class RandomizerView: UIView {
         let element = UITextField()
         element.backgroundColor = .customGreen
         element.textColor = .white
+        element.text = "100"
         element.attributedPlaceholder = NSAttributedString(
-            string: "max",
+            string: NSLocalizedString("max", comment: "placeholder for higher limit"),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         element.borderStyle = .roundedRect
         element.keyboardType = .numberPad
@@ -75,7 +80,7 @@ final class RandomizerView: UIView {
         setConstraints()
         setButton(view: self,
                   button: randomizerButton,
-                  title: "R O L L",
+                  title: NSLocalizedString("rollButton", comment: "title for roll button"),
                   bottom: 80,
                   side: 120)
     }
@@ -86,7 +91,7 @@ final class RandomizerView: UIView {
 }
 
 // MARK: - extension for flow funcs
-private extension RandomizerView {
+extension RandomizerView {
     func addViews() {
         addSubview(randomizerButton)
         addSubview(rangeLabel)
@@ -120,5 +125,11 @@ private extension RandomizerView {
         numberLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+    }
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "randomizerSound", withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
 }

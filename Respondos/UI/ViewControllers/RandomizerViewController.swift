@@ -22,7 +22,7 @@ final class RandomizerViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        setUpNavBar(contentView, "Random Number")
+        setUpNavBar(contentView, NSLocalizedString("navbarRandomizer", comment: "navbar title for randomizer"))
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -72,6 +72,7 @@ private extension RandomizerViewController {
     
     private func getRandomNumber() {
         contentView.vibroGenerator.impactOccurred()
+        contentView.playSound()
         contentView.randomizerButton.isEnabled = false
         
         contentView.numberLabel.text = "♗"
@@ -85,13 +86,9 @@ private extension RandomizerViewController {
     
     @objc func rollButton() {
         if contentView.minNumber == nil && contentView.maxNumber == nil {
-            showAlert(title: "In case of no range you will get number by default range: 0 ... 100")
-            contentView.minNumber = 0
-            contentView.minTextField.text = "0"
-            contentView.maxNumber = 100
-            contentView.maxTextField.text = "100"
+            showAlert(title: NSLocalizedString("bothNilAlert", comment: "alert text when both borders is nil"))
         } else if contentView.minNumber == nil || contentView.maxNumber == nil {
-            showAlert(title: "Set second border")
+            showAlert(title: NSLocalizedString("oneNilAlert", comment: "alert text when one border is nil"))
         }
         
         guard contentView.minNumber != nil, contentView.maxNumber != nil else { return }
@@ -99,7 +96,7 @@ private extension RandomizerViewController {
         if contentView.minNumber! <= contentView.maxNumber! {
             getRandomNumber()
         } else {
-            showAlert(title: "Minimum border must be lower or equal than maximum border")
+            showAlert(title: NSLocalizedString("minHigher", comment: "alert text when min is higher than max"))
         }
     }
     

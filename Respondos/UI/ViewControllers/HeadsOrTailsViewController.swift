@@ -20,7 +20,7 @@ final class HeadsOrTailsViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        setUpNavBar(contentView, "Heads or Tails")
+        setUpNavBar(contentView, NSLocalizedString("navbarHeadsOrTails", comment: "navbar title for heads or tails"))
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
