@@ -76,11 +76,20 @@ private extension HeadsOrTailsView {
             $0.bottom.equalTo(coinImageView.snp.top).offset(-40)
         }
         
-        coinImageView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(80)
-            $0.trailing.equalToSuperview().offset(-80)
-            $0.centerY.equalToSuperview()
-            $0.height.equalTo(coinImageView.snp.width)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            coinImageView.snp.makeConstraints {
+                $0.leading.equalToSuperview().offset(200)
+                $0.trailing.equalToSuperview().offset(-200)
+                $0.centerY.equalToSuperview()
+                $0.height.equalTo(coinImageView.snp.width)
+            }
+        } else {
+            coinImageView.snp.makeConstraints {
+                $0.leading.equalToSuperview().offset(80)
+                $0.trailing.equalToSuperview().offset(-80)
+                $0.centerY.equalToSuperview()
+                $0.height.equalTo(coinImageView.snp.width)
+            }
         }
     }
     
@@ -100,7 +109,7 @@ private extension HeadsOrTailsView {
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
     }
-        
+    
     @objc func tossButton() {
         playSound()
         vibroGenerator.impactOccurred()

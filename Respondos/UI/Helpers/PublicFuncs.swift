@@ -30,10 +30,20 @@ public func setUpNavBar(_ view: UIView, _ title: String) {
 public func setButton(view: UIView, button: UIButton, title: String, bottom: Int, side: Int) {
     button.setTitle(title, for: .normal)
     
-    button.snp.makeConstraints {
-        $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-bottom)
-        $0.leading.equalToSuperview().offset(side)
-        $0.trailing.equalToSuperview().offset(-side)
-        $0.height.equalTo(button.snp.width).multipliedBy(0.4)
+    if UIDevice.current.userInterfaceIdiom == .pad {
+        button.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-bottom)
+            $0.leading.equalToSuperview().offset(side)
+            $0.trailing.equalToSuperview().offset(-side)
+            $0.height.equalTo(180)
+        }
+    } else {
+        button.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-bottom)
+            $0.leading.equalToSuperview().offset(side)
+            $0.trailing.equalToSuperview().offset(-side)
+            $0.height.equalTo(button.snp.width).multipliedBy(0.4)
+        }
     }
+ 
 }
