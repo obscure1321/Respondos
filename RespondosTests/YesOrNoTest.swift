@@ -21,5 +21,4 @@ final class YesOrNoTest: XCTestCase {
         XCTAssertFalse(view.yesOrNoButton.isEnabled)
         XCTAssertEqual(view.answerLabel.text, "♗")
     }
-
 }

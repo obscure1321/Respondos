@@ -9,7 +9,7 @@ import UIKit
 
 final class YesOrNoViewController: UIViewController {
     // MARK: - properties
-    private let contentView = YesOrNoView()
+    let contentView = YesOrNoView()
     
     // MARK: - lifecycle funcs
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ final class YesOrNoViewController: UIViewController {
 }
 
 // MARK: - extension for text color changing funcs
-private extension YesOrNoViewController {
+extension YesOrNoViewController {
     func isDarkModeEnabled() -> Bool {
          return traitCollection.userInterfaceStyle == .dark
      }
