@@ -64,7 +64,7 @@ final class YesOrNoView: UIView {
     
     func playSound() {
         let url = Bundle.main.url(forResource: "yesOrNoSound", withExtension: "wav")
-        player = try! AVAudioPlayer(contentsOf: url!)
+        player = try? AVAudioPlayer(contentsOf: url!)
         player.play()
     }
     

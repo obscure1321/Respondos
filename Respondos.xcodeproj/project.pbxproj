@@ -32,13 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6D269AFE2B8F45ED00858C1B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DA8951B2B60F6EE00C43F82 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6DA895222B60F6EE00C43F82;
-			remoteInfo = Respondos;
-		};
 		6D57FFDC2B7FBDBB00CB2BF9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6DA8951B2B60F6EE00C43F82 /* Project object */;
@@ -53,7 +46,6 @@
 		6D21291F2B7BA3E7004CE41C /* coinSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coinSound.wav; sourceTree = "<group>"; };
 		6D2129222B7CBCAB004CE41C /* randomizerSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = randomizerSound.wav; sourceTree = "<group>"; };
 		6D21292A2B7CC97B004CE41C /* yesOrNoSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yesOrNoSound.wav; sourceTree = "<group>"; };
-		6D269AFA2B8F45ED00858C1B /* YesOrNoViewController.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YesOrNoViewController.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D269B032B8F462100858C1B /* YesOrNoViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesOrNoViewControllerTest.swift; sourceTree = "<group>"; };
 		6D350EFA2B74CC5900138AB9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6D57FFD82B7FBDBB00CB2BF9 /* RespondosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RespondosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,13 +74,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6D269AF72B8F45ED00858C1B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D57FFD52B7FBDBB00CB2BF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,7 +137,6 @@
 			children = (
 				6DA895232B60F6EE00C43F82 /* Respondos.app */,
 				6D57FFD82B7FBDBB00CB2BF9 /* RespondosTests.xctest */,
-				6D269AFA2B8F45ED00858C1B /* YesOrNoViewController.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,24 +224,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D269AF92B8F45ED00858C1B /* YesOrNoViewController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6D269B022B8F45ED00858C1B /* Build configuration list for PBXNativeTarget "YesOrNoViewController" */;
-			buildPhases = (
-				6D269AF62B8F45ED00858C1B /* Sources */,
-				6D269AF72B8F45ED00858C1B /* Frameworks */,
-				6D269AF82B8F45ED00858C1B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6D269AFF2B8F45ED00858C1B /* PBXTargetDependency */,
-			);
-			name = YesOrNoViewController;
-			productName = YesOrNoViewController;
-			productReference = 6D269AFA2B8F45ED00858C1B /* YesOrNoViewController.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		6D57FFD72B7FBDBB00CB2BF9 /* RespondosTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D57FFE02B7FBDBB00CB2BF9 /* Build configuration list for PBXNativeTarget "RespondosTests" */;
@@ -285,6 +251,7 @@
 				6DA895202B60F6EE00C43F82 /* Frameworks */,
 				6DA895212B60F6EE00C43F82 /* Resources */,
 				E2D4000A43C67B83E90AB493 /* [CP] Embed Pods Frameworks */,
+				6D9554AF2BA4888000619408 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -305,10 +272,6 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					6D269AF92B8F45ED00858C1B = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 6DA895222B60F6EE00C43F82;
-					};
 					6D57FFD72B7FBDBB00CB2BF9 = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 6DA895222B60F6EE00C43F82;
@@ -334,19 +297,11 @@
 			targets = (
 				6DA895222B60F6EE00C43F82 /* Respondos */,
 				6D57FFD72B7FBDBB00CB2BF9 /* RespondosTests */,
-				6D269AF92B8F45ED00858C1B /* YesOrNoViewController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6D269AF82B8F45ED00858C1B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D57FFD62B7FBDBB00CB2BF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +347,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6D9554AF2BA4888000619408 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		E2D4000A43C67B83E90AB493 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,13 +384,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6D269AF62B8F45ED00858C1B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6D57FFD42B7FBDBB00CB2BF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,11 +416,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6D269AFF2B8F45ED00858C1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6DA895222B60F6EE00C43F82 /* Respondos */;
-			targetProxy = 6D269AFE2B8F45ED00858C1B /* PBXContainerItemProxy */;
-		};
 		6D57FFDD2B7FBDBB00CB2BF9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6DA895222B60F6EE00C43F82 /* Respondos */;
@@ -485,46 +445,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6D269B002B8F45ED00858C1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KKDHHVW363;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-05.YesOrNoViewController";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Respondos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Respondos";
-			};
-			name = Debug;
-		};
-		6D269B012B8F45ED00858C1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KKDHHVW363;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-05.YesOrNoViewController";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Respondos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Respondos";
-			};
-			name = Release;
-		};
 		6D57FFDE2B7FBDBB00CB2BF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -749,15 +669,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D269B022B8F45ED00858C1B /* Build configuration list for PBXNativeTarget "YesOrNoViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6D269B002B8F45ED00858C1B /* Debug */,
-				6D269B012B8F45ED00858C1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		6D57FFE02B7FBDBB00CB2BF9 /* Build configuration list for PBXNativeTarget "RespondosTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
