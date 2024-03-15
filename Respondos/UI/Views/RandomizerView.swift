@@ -129,7 +129,7 @@ extension RandomizerView {
     
     func playSound() {
         let url = Bundle.main.url(forResource: "randomizerSound", withExtension: "wav")
-        player = try! AVAudioPlayer(contentsOf: url!)
+        player = try? AVAudioPlayer(contentsOf: url!)
         player.play()
     }
 }
